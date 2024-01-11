@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enable 2FA</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  </head>
+  <body>
+    <h1>Enable 2FA</h1>
+    <p>Hello, {{ username }}!</p>
+    <p>Scan the following QR code with your authenticator app:</p>
+    <img src="{{ url_for('static', filename='qrcode.png') }}" alt="QR Code" />
+    <p>Or manually enter this code: {{ totp_secret }}</p>
+  </body>
+</html>
