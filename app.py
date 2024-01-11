@@ -38,5 +38,19 @@ def login():
 
     return render_template('login.html', form=form)
 
+@app.route('/verify_2fa/<username>/<totp_secret>', methods=['POST'])
+def verify_2fa(username, totp_secret):
+    verification_code = request.form.get('verification_code')
+    
+    # Verify the entered code
+    totp = pyotp.TOTP(totp_secret)
+    if totp.verify(verification_code):
+        # Successful verification, you can redirect to a success page or perform further actions
+        return "Verification successful! You can now proceed with 2FA."
+    else:
+        # Failed verification
+        flash('Invalid verification code', 'danger')
+        return redirect(url_for('login'))
+
 if __name__ == '__main__':
     app.run(debug=True)
