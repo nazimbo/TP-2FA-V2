@@ -1,63 +1,67 @@
 body {
-  font-family: "Arial", sans-serif;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
 }
 
 .container {
-  max-width: 400px;
-  margin: 50px auto; /* Center container vertically */
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
+  width: 50%;
+  margin: auto;
+  overflow: hidden;
 }
 
 h1 {
-  text-align: center;
+  color: #333;
 }
 
 form {
-  display: flex;
-  flex-direction: column;
+  background: #fff;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-label {
-  margin-bottom: 8px; /* Slightly reduce space between label and input */
-}
-
-input {
+.flash-success {
+  color: #4caf50;
+  background-color: #dff0d8;
   padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ddd; /* Add a subtle border for better input separation */
-  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+.flash-danger {
+  color: #d9534f;
+  background-color: #f2dede;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="submit"] {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0 15px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
 }
 
 button {
   background-color: #4caf50;
-  color: #fff;
-  padding: 10px;
+  color: white;
+  padding: 10px 15px;
+  border: none;
   cursor: pointer;
-  border: none; /* Remove button border for cleaner look */
-  border-radius: 3px;
+  width: 100%;
 }
 
 button:hover {
   background-color: #45a049;
 }
 
-.error {
-  color: #ff0000;
-  margin-bottom: 10px;
-}
-
-#enable-2fa {
-  text-align: center;
-}
-
-#qr-code {
-  max-width: 100%; /* Ensure QR code is responsive */
-  margin: 20px auto;
-  display: block; /* Center QR code */
+img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
 }
