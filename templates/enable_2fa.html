@@ -3,17 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Enable 2FA</title>
+    <title>Activer 2FA</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
   </head>
   <body>
-    <h1>Enable 2FA</h1>
-    <p>Hello, {{ username }}!</p>
-    <p>Scan the following QR code with your authenticator app:</p>
+    <h1>Activer 2FA</h1>
+    <p>Yo, {{ username }} !</p>
+    <p>Scanne ce QR code avec l'application FreeOTP :</p>
     <img src="{{ url_for('static', filename='qrcode.png') }}" alt="QR Code" />
-    <p>Or manually enter this code: {{ totp_secret }}</p>
+    <p>Ou renseigne manuellement ce code: {{ totp_secret }}</p>
     <form method="POST" action="{{ url_for('verify_2fa', username=username, totp_secret=totp_secret) }}">
-      <p>Or manually enter this code:</p>
+      <p>Si ça a déjà était fait, tape le code fourni par l'app ici :</p>
       <input type="text" name="verification_code" required />
       <p><button type="submit">Verify</button></p>
     </form>

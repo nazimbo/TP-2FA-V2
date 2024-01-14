@@ -40,7 +40,7 @@ def verify_2fa(username, totp_secret):
     
     totp = pyotp.TOTP(totp_secret)
     if totp.verify(verification_code):
-        return "Verification successful! You can now proceed with 2FA."
+        return "Verification réussie ! Vous pouvez maintenant utiliser le 2FA."
     else:
         flash('Invalid verification code', 'danger')
         return redirect(url_for('login'))
